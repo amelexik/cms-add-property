@@ -1,6 +1,5 @@
 {
     "name": "skeeks/cms-add-property",
-    "version" : "1.0.0",
     "description": "Дополнительные типы свойст",
     "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2"],
     "homepage": "http://www.skeeks.com/",
