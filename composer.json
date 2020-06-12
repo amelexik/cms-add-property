@@ -1,0 +1,31 @@
+{
+    "name": "skeeks/cms-add-property",
+    "version" : "1.0.0",
+    "description": "Дополнительные типы свойст",
+    "keywords": ["module", "cms", "skeeks", "sx", "app", "yii2"],
+    "homepage": "http://www.skeeks.com/",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Alexey Melnyk",
+            "email": "amelexik@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": false,
+    "require": {
+        "skeeks/cms": "^5.0.4 || dev-master",
+        "kartik-v/yii2-widget-select2": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "skeeks\\modules\\cms\\addProperty\\": "src/"
+        }
+    },
+    "extra": {
+        "config-plugin": {
+            "web": "src/config/web.php"
+        }
+    }
+}
