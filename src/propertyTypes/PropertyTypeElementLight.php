@@ -85,7 +85,7 @@ class PropertyTypeElementLight extends PropertyType
         $field = parent::renderForActiveForm();
 
         $query = (new \yii\db\Query())
-            ->select(['cce.active', 'cce.id', 'cce.content_id', 'CONCAT(cce.name, " (", ct.name,")") as name'])
+            ->select(['cce.active', 'cce.id', 'cce.content_id', 'CONCAT_WS("", cce.name, " [", ct.name,"]") as name'])
             ->where(['cce.active' => Cms::BOOL_Y])
             ->from("{{%cms_content_element}} cce")
             ->leftJoin('{{%cms_tree}} ct','ct.id = cce.tree_id');
