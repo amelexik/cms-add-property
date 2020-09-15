@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
 use Yii;
 
 /**
- * Class PropertyTypeElement
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * Class PropertyTypeElementLight
+ * @package skeeks\cms\addProperty\propertyTypes
  */
 class PropertyTypeElementLight extends PropertyType
 {
@@ -85,10 +85,11 @@ class PropertyTypeElementLight extends PropertyType
         $field = parent::renderForActiveForm();
 
         $query = (new \yii\db\Query())
-            ->select(['cce.active', 'cce.id', 'cce.content_id', 'CONCAT_WS("", cce.name, " [", ct.name,"]") as name'])
+            ->select(['cce.active', 'cce.id', 'cce.content_id', 'cce.name'])
             ->where(['cce.active' => Cms::BOOL_Y])
             ->from("{{%cms_content_element}} cce")
-            ->leftJoin('{{%cms_tree}} ct','ct.id = cce.tree_id');
+//            ->leftJoin('{{%cms_content}} cc','cc.id = cce.content_id')
+            ->orderBy(['cce.name' => 'ASC']);
 
 
         if ($this->content_id) {
